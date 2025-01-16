@@ -32,3 +32,31 @@ class Solution {
         }
     }
 }
+
+
+Best case:-if the arrayof input is sorted
+
+#include <stdio.h>
+int main() {
+    int n;scanf("%d",&n);
+    int a[n];
+    for(int i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+    for(int i=0;i<n;i++){
+        int d=0;
+        for(int j=i+1;j<n;j++){
+            if(a[i]>a[j]){
+                int t=a[i];
+                a[i]=a[j];
+                a[j]=t;d=1;
+            }
+        }
+        if(d==0){
+            break;
+        }printf("runs\n");
+    }
+    for(int i=0;i<n;i++){
+        printf("%d ",a[i]);
+    }
+}
